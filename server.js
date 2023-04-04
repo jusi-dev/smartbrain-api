@@ -3,11 +3,12 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex')
+require('dotenv').config();
 
 const db = knex({
     client : 'pg',
     connection: {
-        connectionString : env.POSTURL,
+        connectionString : process.env.POSTURL,
         ssl: true
     }
 });
